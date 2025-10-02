@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | 申し込み</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero small-hero" style="background-image: url('img/distribution_chart.png');">
+      <div class="hero-overlay">
+        <h2>応募フォームとLINE案内</h2>
+        <p>参加希望者向けの設問テンプレートとLINE案内の方法をまとめました。</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- 参加申し込みフォーム -->
+    <section id="google-form" class="reveal">
+      <h2>参加申し込みフォーム</h2>
+      <p>下記フォームに必要事項を入力の上、送信してください。送信後はLINEオープンチャットのご案内をお送りします。</p>
+      <!-- Contact form using formsubmit.co to avoid mailto encoding issues -->
+      <form id="applyForm" action="#" method="POST" accept-charset="UTF-8">
+        <label for="name">氏名（必須）</label>
+        <input type="text" id="name" name="氏名" required>
+        <label for="furigana">ふりがな（必須）</label>
+        <input type="text" id="furigana" name="ふりがな" required>
+        <label for="email">メールアドレス（必須）</label>
+        <input type="email" id="email" name="メール" required>
+        <label for="phone">電話番号（必須）</label>
+        <input type="tel" id="phone" name="電話番号" required>
+        <label for="instagram">Instagram（任意）</label>
+        <input type="text" id="instagram" name="Instagram">
+        <label for="lineid">LINE ID（任意）</label>
+        <input type="text" id="lineid" name="LINE ID">
+        <label for="emergency">緊急連絡先（必須）</label>
+        <textarea id="emergency" name="緊急連絡先" rows="3" placeholder="氏名：山田太郎（父）\n続柄：父\n電話：090-xxxx-xxxx\nメール：example@example.com" required></textarea>
+        <label for="investment">出資費用の想定（必須）</label>
+        <select id="investment" name="出資費用" required>
+          <option value="">選択してください</option>
+          <option value="1万円未満">1万円未満</option>
+          <option value="1〜3万円">1〜3万円</option>
+          <option value="3〜5万円">3〜5万円</option>
+          <option value="5〜10万円">5〜10万円</option>
+          <option value="10万円以上">10万円以上</option>
+        </select>
+        <label for="investment-note">金額に関する補足（任意）</label>
+        <textarea id="investment-note" name="金額補足" rows="2"></textarea>
+        <fieldset>
+          <legend>該当するスキル（複数選択可）</legend>
+          <label><input type="checkbox" name="スキル" value="DIY">DIY</label>
+          <label><input type="checkbox" name="スキル" value="音楽">音楽</label>
+          <label><input type="checkbox" name="スキル" value="動画編集">動画編集</label>
+          <label><input type="checkbox" name="スキル" value="写真／ドローン">写真／ドローン</label>
+          <label><input type="checkbox" name="スキル" value="料理">料理</label>
+          <label><input type="checkbox" name="スキル" value="デザイン">デザイン</label>
+          <label><input type="checkbox" name="スキル" value="広報">広報</label>
+          <label><input type="checkbox" name="スキル" value="企画運営">企画運営</label>
+          <label><input type="checkbox" name="スキル" value="その他">その他</label>
+        </fieldset>
+        <label for="skill-details">スキルの具体例・実績（任意）</label>
+        <textarea id="skill-details" name="スキル実績" rows="2"></textarea>
+        <label for="motivation">参加動機（必須）</label>
+        <textarea id="motivation" name="参加動機" rows="3" required></textarea>
+        <label for="intro">自己紹介（必須）</label>
+        <textarea id="intro" name="自己紹介" rows="3" required></textarea>
+        <fieldset>
+          <legend>同意事項</legend>
+          <label><input type="checkbox" name="同意_写真公開" required> 写真・動画の撮影・公開に同意します</label>
+          <label><input type="checkbox" name="同意_免責" required> 事故・怪我等に関する免責に同意します</label>
+          <label><input type="checkbox" name="同意_個人情報" required> 個人情報の取り扱いに同意します</label>
+        </fieldset>
+        <button type="submit" class="cta-button">送信</button>
+      </form>
+    </section>
+    <section class="reveal">
+      <h2>応募フォーム：設問テンプレ</h2>
+      <p>以下はGoogleフォームなどでそのまま使える設問の例です。各質問はプロジェクトに合わせて自由に編集してください。</p>
+      <h3>セクション1｜基本情報</h3>
+      <ul>
+        <li><strong>氏名（必須）:</strong> 短文。2文字以上の検証。</li>
+        <li><strong>ふりがな（必須）:</strong> 短文。</li>
+        <li><strong>メールアドレス（必須）:</strong> メール形式を検証。LINE招待リンクの送付に使用します。</li>
+        <li><strong>電話番号（必須）:</strong> 半角数字と「-」「+」可（例: 090-1234-5678）。</li>
+        <li><strong>Instagram（任意）:</strong> @からでもURLでも可。</li>
+        <li><strong>LINE ID（任意）:</strong> 後ほど公式アカウントの友だち追加リンクも送ります。不明な場合は空欄でOK。</li>
+        <li><strong>緊急連絡先（必須）:</strong> 段落回答。氏名／続柄／電話／メールを入力してもらいます。</li>
+      </ul>
+      <h3>セクション2｜出資費用の想定</h3>
+      <ul>
+        <li><strong>出資費用の想定（必須）:</strong> 選択式。1万円未満、1〜3万円、3〜5万円、5〜10万円、10万円以上。現時点の目安でOK。</li>
+        <li><strong>金額に関する補足（任意）:</strong> 段落回答。材料費に充当希望、分割相談可 など。</li>
+      </ul>
+      <h3>セクション3｜特技・スキル</h3>
+      <ul>
+        <li><strong>該当するスキル（複数選択可）:</strong> DIY、音楽、動画編集、写真撮影／ドローン、料理、デザイン、広報、企画運営、その他。</li>
+        <li><strong>スキルの具体例・実績（任意）:</strong> 段落回答。例: インパクト・丸ノコ使用経験あり／動画編集で短編3本制作 など。</li>
+      </ul>
+      <h3>セクション4｜参加動機・自己紹介</h3>
+      <ul>
+        <li><strong>参加動機（必須）:</strong> 段落回答。最低100文字などの検証を設けると◎。</li>
+        <li><strong>自己紹介（必須）:</strong> 段落回答。得意なこと／性格／今回挑戦したい役割など。</li>
+      </ul>
+      <h3>セクション5｜同意事項</h3>
+      <ul>
+        <li><strong>写真・動画の撮影・公開への同意:</strong> 必須のチェックボックス。広報目的でSNS・Webに掲載することがある旨を伝えます。</li>
+        <li><strong>事故・怪我等に関する免責への同意:</strong> 必須のチェックボックス。主催者に重大な過失がある場合を除き責任を問わないことを了承します。</li>
+        <li><strong>個人情報の取り扱い:</strong> 必須のチェックボックス。入力情報はMakeCamp運営・連絡のみに使用し、目的外利用をしないことを明記します。</li>
+      </ul>
+    </section>
+    <section class="reveal">
+      <h2>回答後にLINE情報を自動で送る方法</h2>
+      <h3>方法A（最も簡単）：確認メッセージにリンクを載せる</h3>
+      <ol>
+        <li>Googleフォーム右上の設定（歯車）→ <strong>プレゼンテーション</strong> → <strong>確認メッセージ</strong> を編集します。</li>
+        <li>以下のテキストを確認メッセージに貼り付けます。</li>
+      </ol>
+      <pre><code>ご応募ありがとうございます！🎉<br>次の手順で連絡用LINEに参加してください<br>1) 友だち追加リンク： https://lin.ee/XXXXX<br>2) 参加合言葉： 「MakeCamp応募済」<br>※LINE参加でエントリー完了となります</code></pre>
+      <p>必要であれば、QR画像をフォーム末尾に挿入しておくと親切です。</p>
+      <h3>方法B（おすすめ）：自動返信メールでLINEリンクを送る</h3>
+      <p>フォームの回答に紐づいたスプレッドシートを利用し、Apps Scriptで自動返信メールを送る方法です。</p>
+      <ol>
+        <li>回答スプレッドシートを開き、<strong>拡張機能 &gt; Apps Script</strong> にアクセスします。</li>
+        <li>以下のコードを貼り付け、<code>LINE_INVITE_URL</code> を自身の招待リンクに変更します。</li>
+      </ol>
+      <pre><code>function onFormSubmit(e) {<br>  const resp = e.namedValues;<br>  const email = (resp['メールアドレス'] || resp['Email'] || [''])[0];<br>  const name  = (resp['氏名'] || [''])[0];<br>  if (!email) return;<br>  const LINE_INVITE_URL = 'https://lin.ee/XXXXX';<br>  const QR_IMAGE_URL    = 'https://drive.google.com/uc?export=view&id=XXXXXXXX';<br>  const subject = `【MakeCamp】応募ありがとうございます（LINEご参加のお願い）`;<br>  const body = `${name} 様\n\nMakeCampへのご応募ありがとうございます！\n\n連絡はLINEオープンチャット／公式アカウントで行います。\n下記より参加（友だち追加）をお願いします。\n\n▼LINE参加リンク\n${LINE_INVITE_URL}\n\n▼参加合言葉\nMakeCamp応募済\n\n${QR_IMAGE_URL ? '▼QRコード（画像URL）\n' + QR_IMAGE_URL + '\n' : ''}\n\n— MakeCamp運営\n`;<br>  MailApp.sendEmail({ to: email, subject, body });<br>}</code></pre>
+      <ol start="3">
+        <li>Apps Scriptのトリガー設定で <strong>onFormSubmit</strong> をフォーム送信時に実行するよう設定し、初回実行で権限を付与します。</li>
+      </ol>
+      <p>この方法により、送信者のメールにLINE招待が自動送信されるため、確実に連絡導線を提供できます。</p>
+    </section>
+    <section class="reveal">
+      <h2>仕上げのチェックリスト</h2>
+      <ul>
+        <li>フォーム設定でメールアドレス収集をONにするか、設問で必須に設定します。</li>
+        <li>確認メッセージにLINEリンクを掲載（方法A）。</li>
+        <li>自動返信メール（方法B）も追加するとリマインド効果が高まります。</li>
+        <li>スプレッドシートの列の順番・見出しがスクリプトと一致しているか確認します。</li>
+        <li>QR画像をGoogleドライブに保存し、共有リンクを「リンクを知っている全員」に設定します。</li>
+        <li>同意文言はプロジェクトのポリシーに合わせて必要なら追記してください。</li>
+      </ul>
+      <p>フォーム作成や運用設計について不明点があれば、<a href="mailto:suwagen0408@icloud.com">suwagen0408@icloud.com</a> までお気軽にお問い合わせください。</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Handle form submission via mailto with proper encoding
+      const form = document.getElementById('applyForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          let body = '';
+          formData.forEach((value, key) => {
+            // For multiple checkboxes with same name, values will be aggregated automatically separated by commas
+            body += `${key}=${value}\n`;
+          });
+          const subject = 'MakeCamp応募';
+          const mailtoLink = `mailto:suwagen0408@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          // Redirect to mailto link
+          window.location.href = mailtoLink;
+        });
+      }
+    });
+  </script>
+</body>
+</html>
