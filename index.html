@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | ホーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Hero section -->
+    <div class="hero">
+      <div class="hero-overlay">
+        <h2>一瞬の青春を、一生の居場所に。</h2>
+        <p>使われていない空き家を仲間と再生し、旅をするように暮らす新しいライフスタイルを提案します。</p>
+        <a href="apply.html" class="cta-button">参加してみる</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro section highlighting the concept -->
+    <section class="reveal">
+      <h2>MakeCampとは？</h2>
+      <p>MakeCampは、全国に点在する空き家をリノベーションし、宿泊・体験を通じて収益を生み出しながら、参加者全員で分かち合うプロジェクトです。</p>
+      <p>「旅するように暮らす」と「仲間と収益を分け合う」を両立させ、帰れる家のネットワークを広げていきます。</p>
+    </section>
+
+    <!-- Quick links cards to major pages -->
+    <section class="cards reveal">
+      <div class="card">
+        <img src="img/hero.jpg" alt="概要">
+        <h3>概要</h3>
+        <p>コンセプトやビジョンを短くまとめたページはこちら。</p>
+        <a href="overview.html" class="cta-button secondary">もっと見る</a>
+      </div>
+      <div class="card">
+        <img src="img/festival.jpg" alt="スケジュール">
+        <h3>スケジュール</h3>
+        <p>2026年夏の25日間合宿プログラムを日程ごとにチェック。</p>
+        <a href="schedule.html" class="cta-button secondary">詳細</a>
+      </div>
+      <div class="card">
+        <img src="img/revenue_chart.png" alt="収益モデル">
+        <h3>収益モデル</h3>
+        <p>投資・売上・利益の仕組みや利益分配の考え方を分かりやすい図で紹介します。</p>
+        <a href="model.html" class="cta-button secondary">見る</a>
+      </div>
+    </section>
+
+    <section class="cards reveal">
+      <div class="card">
+        <img src="img/distribution_chart.png" alt="申し込み">
+        <h3>申し込み</h3>
+        <p>応募フォームの設問やLINE連携の手順を掲載しています。</p>
+        <a href="apply.html" class="cta-button secondary">応募する</a>
+      </div>
+      <div class="card">
+        <img src="img/tools.jpg" alt="ギャラリー">
+        <h3>ギャラリー</h3>
+        <p>DIYや祭りの様子を写真でチェック。プロジェクトの雰囲気を感じてください。</p>
+        <a href="gallery.html" class="cta-button secondary">見る</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+
+  <!-- Reveal animation script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
