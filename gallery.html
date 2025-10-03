@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | ギャラリー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero small-hero" style="background-image: url('img/festival.jpg');">
+      <div class="hero-overlay">
+        <h2>フォトギャラリー</h2>
+        <p>祭りやDIYの雰囲気を写真で感じてください。</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="reveal">
+      <h2>プロジェクトの様子</h2>
+      <div class="gallery-grid">
+        <img src="img/festival.jpg" alt="祭りの様子">
+        <img src="img/tools.jpg" alt="DIY工具">
+        <img src="img/hero.jpg" alt="リノベーションする家">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

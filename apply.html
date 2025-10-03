@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | 申し込み</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero small-hero" style="background-image: url('img/distribution_chart.png');">
+      <div class="hero-overlay">
+        <h2>応募フォームとLINE案内</h2>
+        <p>参加希望者向けの設問テンプレートとLINE案内の方法をまとめました。</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- 参加申し込みフォーム -->
+    <section id="google-form" class="reveal">
+      <h2>参加申し込みフォーム</h2>
+      <p>下記フォームに必要事項を入力の上、送信してください。送信後はLINEオープンチャットのご案内をお送りします。</p>
+      <!-- Contact form using formsubmit.co to avoid mailto encoding issues -->
+      <form id="applyForm" action="#" method="POST" accept-charset="UTF-8">
+        <label for="name">氏名（必須）</label>
+        <input type="text" id="name" name="氏名" required>
+        <label for="furigana">ふりがな（必須）</label>
+        <input type="text" id="furigana" name="ふりがな" required>
+        <label for="email">メールアドレス（必須）</label>
+        <input type="email" id="email" name="メール" required>
+        <label for="phone">電話番号（必須）</label>
+        <input type="tel" id="phone" name="電話番号" required>
+        <label for="instagram">Instagram（任意）</label>
+        <input type="text" id="instagram" name="Instagram">
+        <label for="lineid">LINE ID（任意）</label>
+        <input type="text" id="lineid" name="LINE ID">
+        <label for="emergency">緊急連絡先（必須）</label>
+        <textarea id="emergency" name="緊急連絡先" rows="3" placeholder="氏名：山田太郎（父）\n続柄：父\n電話：090-xxxx-xxxx\nメール：example@example.com" required></textarea>
+        <label for="investment">出資費用の想定（必須）</label>
+        <select id="investment" name="出資費用" required>
+          <option value="">選択してください</option>
+          <option value="1万円未満">1万円未満</option>
+          <option value="1〜3万円">1〜3万円</option>
+          <option value="3〜5万円">3〜5万円</option>
+          <option value="5〜10万円">5〜10万円</option>
+          <option value="10万円以上">10万円以上</option>
+        </select>
+        <label for="investment-note">金額に関する補足（任意）</label>
+        <textarea id="investment-note" name="金額補足" rows="2"></textarea>
+        <fieldset>
+          <legend>該当するスキル（複数選択可）</legend>
+          <label><input type="checkbox" name="スキル" value="DIY">DIY</label>
+          <label><input type="checkbox" name="スキル" value="音楽">音楽</label>
+          <label><input type="checkbox" name="スキル" value="動画編集">動画編集</label>
+          <label><input type="checkbox" name="スキル" value="写真／ドローン">写真／ドローン</label>
+          <label><input type="checkbox" name="スキル" value="料理">料理</label>
+          <label><input type="checkbox" name="スキル" value="デザイン">デザイン</label>
+          <label><input type="checkbox" name="スキル" value="広報">広報</label>
+          <label><input type="checkbox" name="スキル" value="企画運営">企画運営</label>
+          <label><input type="checkbox" name="スキル" value="その他">その他</label>
+        </fieldset>
+        <label for="skill-details">スキルの具体例・実績（任意）</label>
+        <textarea id="skill-details" name="スキル実績" rows="2"></textarea>
+        <label for="motivation">参加動機（必須）</label>
+        <textarea id="motivation" name="参加動機" rows="3" required></textarea>
+        <label for="intro">自己紹介（必須）</label>
+        <textarea id="intro" name="自己紹介" rows="3" required></textarea>
+        <fieldset>
+          <legend>同意事項</legend>
+          <label><input type="checkbox" name="同意_写真公開" required> 写真・動画の撮影・公開に同意します</label>
+          <label><input type="checkbox" name="同意_免責" required> 事故・怪我等に関する免責に同意します</label>
+          <label><input type="checkbox" name="同意_個人情報" required> 個人情報の取り扱いに同意します</label>
+        </fieldset>
+        <button type="submit" class="cta-button">送信</button>
+      </form>
+    </section>
+   
+  </main>
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Handle form submission via mailto with proper encoding
+      const form = document.getElementById('applyForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          let body = '';
+          formData.forEach((value, key) => {
+            // For multiple checkboxes with same name, values will be aggregated automatically separated by commas
+            body += `${key}=${value}\n`;
+          });
+          const subject = 'MakeCamp応募';
+          const mailtoLink = `mailto:suwagen0408@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          // Redirect to mailto link
+          window.location.href = mailtoLink;
+        });
+      }
+    });
+  </script>
+</body>
+</html>

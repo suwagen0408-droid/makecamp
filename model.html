@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | 収益モデル</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero small-hero" style="background-image: url('img/revenue_chart.png');">
+      <div class="hero-overlay">
+        <h2>収益モデル</h2>
+        <p>投資・売上・利益の流れと利益分配の仕組みを図解します。</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    
+    
+    <section class="reveal">
+      <h2>収益モデルの詳細</h2>
+      <h3>💰 参加者が負担する費用</h3>
+      <ol>
+        <li><strong>参加費：8万円／人</strong>
+          <ul>
+            <li>内容：宿泊、光熱費、車両レンタル、ワークショップなどの実費</li>
+            <li>ポイント：プロジェクトを「体験」するための費用</li>
+            <li>注意：リノベーション資金や利益分配には使われません。返金や配当の対象にもなりません</li>
+          </ul>
+        </li>
+        <li><strong>出資金：総額の1％以上</strong>
+          <ul>
+            <li>役割：リノベーション費用に充てる投資。利益分配の基準になります</li>
+            <li>最低出資額（例）：リノベ費用400万円の場合 → 4万円（1％）から</li>
+          </ul>
+          <p>💵 想定シミュレーション</p>
+          <ul>
+            <li>宿泊料金：3万円／泊</li>
+            <li>稼働率：30％（年間約110泊）</li>
+            <li>年間売上：約330万円</li>
+            <li>経費・手数料・積立を差し引いた利益：約165万円</li>
+          </ul>
+          <p>📊 出資額と配当の目安</p>
+          <ul>
+            <li>1％出資（4万円） → 年間配当 約1.65万円（利回り 約40％）</li>
+            <li>10％出資（40万円） → 年間配当 約16.5万円</li>
+            <li>20％出資（80万円） → 年間配当 約33万円</li>
+          </ul>
+          <p>🧮 合計負担例</p>
+          <ul>
+            <li>最低参加費：8万円（参加費）+ 4万円（出資金）＝ 12万円</li>
+            <li>10％出資：48万円</li>
+            <li>20％出資：88万円</li>
+          </ul>
+        </li>
+        <li><strong>リターンとリスク</strong>
+          <ul>
+            <li>出資金は利益に応じて毎年配当されます（出資額が多いほど配当も増加）</li>
+            <li>ただし、売上や経費によって配当額は変動します。元本保証はありません</li>
+            <li>参加費はあくまで体験料であり、返金や配当の対象にはなりません</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="chart-wrapper">
+        <img src="img/MakeCamp_distribution.png" alt="収益分配イメージ" class="chart">
+      </div>
+    </section>
+<section class="reveal">
+      <h2>透明性と持続可能性</h2>
+      <ul>
+        <li><strong>透明な収支:</strong> 投資・売上・コストの情報を共有し、参加者全員がプロジェクトの状況を把握できます。</li>
+        <li><strong>再投資による拡大:</strong> 利益の一部を次拠点へ再投資することで、ネットワークを広げます。</li>
+        <li><strong>参加者への還元:</strong> 作業工数や出資比率に応じてフェアに分配し、やりがいを高めます。</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

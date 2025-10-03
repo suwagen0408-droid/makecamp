@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeCamp | 概要</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">MakeCamp</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="overview.html">概要</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="model.html">収益モデル</a></li>
+          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero small-hero" style="background-image: url('img/tools.jpg');">
+      <div class="hero-overlay">
+        <h2>一瞬の青春を、一生の居場所に。</h2>
+        <p>空き家からはじまる、旅とコミュニティの新しい形を紹介します。</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="reveal">
+      <h2>目的</h2>
+      <p>空き家を改修し、宿泊や地域体験で得た収益を参加者に分配することで、社会性と収益性を両立する持続可能なコミュニティをつくります。</p>
+    </section>
+    <section class="reveal">
+      <h2>ビジョン</h2>
+      <p>日本各地や海外に「帰れる家」を点在させ、どこに行っても「ただいま」と言えるライフスタイルを提案します。</p>
+    </section>
+    <section class="reveal">
+      <h2>MakeCampが解決すること</h2>
+      <p>観光地でありながら人口減少で空き家率が高い淡路島で、民泊運営だけではコミュニティが生まれず、ボランティアDIYでは収益が生まれない課題があります。MakeCampは、プロによる基礎工事と参加者によるDIY、地域体験、収益分配を組み合わせることでこの課題を解決します。</p>
+    </section>
+    <section class="reveal">
+      <h2>特徴</h2>
+      <ul>
+        <li><strong>空き家を拠点化:</strong> 基礎工事はプロに任せ、壁塗りや床張りなどを参加者が担います。</li>
+        <li><strong>DIY＋地域体験＋合宿:</strong> DIY作業と並行して祭り・農業・漁業を体験し、深い絆を育みます。</li>
+        <li><strong>収益分配:</strong> 宿泊・体験による利益を出資者・参加者・次拠点で分配し、ネットワークを拡大します。</li>
+      </ul>
+    </section>
+  
+<section class="reveal">
+  <h2>参加するメリット</h2>
+  <ul>
+    <li><strong>スキル習得:</strong> DIY・企画運営・地域交流など、実践的なスキルを身につけられます。</li>
+    <li><strong>仲間との出会い:</strong> 同世代の挑戦者や地域の人々と深いつながりを築けます。</li>
+    <li><strong>収益還元:</strong> 収益分配によって実益とやりがいを両立し、コミュニティを未来に続けていけます。</li>
+    <li><strong>第二の故郷:</strong> 自らの手で再生した拠点は「帰れる場所」として残り、継続的に利用できます。</li>
+    <li><strong>社会貢献:</strong> 空き家問題の解決や地域活性化に直接関わることができます。</li>
+  </ul>
+</section>
+</main>
+  <footer>
+    <p>© 2026 MakeCamp. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
