@@ -1,103 +1,243 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MakeCamp | ホーム</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MakeCamp | 収益モデル</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ページ全体中央寄せ */
+    .page-wrap{
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* カード構造（各項目） */
+    .card{
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      padding:24px;
+      margin:24px auto;
+      width:100%;
+      max-width: 960px;
+    }
+
+    /* 背景色で項目を軽くグループ化 */
+    .tint-green{ background:linear-gradient(0deg,#f4fbf6,#fff 120px); }
+    .tint-cream{ background:linear-gradient(0deg,#fbfaf4,#fff 120px); }
+    .tint-blue{ background:linear-gradient(0deg,#f4f8fb,#fff 120px); }
+
+    /* 見出しスタイル */
+    h1, h2, h3 { color:#2e5d3d; }
+    h2{ border-left:6px solid #8cc79a; padding-left:10px; margin-top:1.2em; }
+
+    /* 表デザイン */
+    table{ width:100%; border-collapse:collapse; margin-top:12px; }
+    th,td{ border:1px solid #e9e9e9; padding:10px; text-align:center; }
+    thead th{ background:#f7faf8; }
+
+    /* グラフ中央寄せ */
+    .chart-wrap{ display:grid; place-items:center; }
+    .chart-card{ width:100%; max-width:560px; margin:0 auto; }
+    .legend{ width:100%; max-width:560px; margin:16px auto 0; line-height:1.6; }
+
+    ul{ margin-left:1.2em; }
+    .note{ color:#666; font-size:0.92rem; }
+  </style>
 </head>
+
 <body>
-  <!-- Header with navigation -->
+  <!-- 共通ナビ -->
   <header>
     <div class="nav-container">
-      <h1 class="logo">MakeCamp</h1>
+      <h1 class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">MakeCamp</a></h1>
       <nav>
         <ul>
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="overview.html">概要</a></li>
-          <li><a href="schedule.html">スケジュール</a></li>
+          <li><a href="index.html#about">概要</a></li>
+          <li><a href="overview.html">背景</a></li>
           <li><a href="model.html">収益モデル</a></li>
-          <li><a href="apply.html">申し込み</a></li>
+          <li><a href="schedule.html">スケジュール</a></li>
           <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="apply.html">参加方法</a></li>
         </ul>
       </nav>
     </div>
-    <!-- Hero section -->
-    <div class="hero">
-      <div class="hero-overlay">
-        <h2>一瞬の青春を、一生の居場所に。</h2>
-        <p>使われていない空き家を仲間と再生し、旅をするように暮らす新しいライフスタイルを提案します。</p>
-        <a href="apply.html" class="cta-button">参加してみる</a>
-      </div>
-    </div>
   </header>
 
-  <main>
-    <!-- Intro section highlighting the concept -->
-    <section class="reveal">
-      <h2>MakeCampとは？</h2>
-      <p>MakeCampは、全国に点在する空き家をリノベーションし、宿泊・体験を通じて収益を生み出しながら、参加者全員で分かち合うプロジェクトです。</p>
-      <p>「旅するように暮らす」と「仲間と収益を分け合う」を両立させ、帰れる家のネットワークを広げていきます。</p>
-    </section>
+  <main class="page-wrap">
+    
+    <div class="card tint-green">
+      <h1>🌿 MakeCamp 拠出特典（改訂・完成版）</h1>
 
-    <!-- Quick links cards to major pages -->
-    <section class="cards reveal">
-      <div class="card">
-        <img src="img/hero.jpg" alt="概要">
-        <h3>概要</h3>
-        <p>コンセプトやビジョンを短くまとめたページはこちら。</p>
-        <a href="overview.html" class="cta-button secondary">もっと見る</a>
-      </div>
-      <div class="card">
-        <img src="img/festival.jpg" alt="スケジュール">
-        <h3>スケジュール</h3>
-        <p>2026年夏の25日間合宿プログラムを日程ごとにチェック。</p>
-        <a href="schedule.html" class="cta-button secondary">詳細</a>
-      </div>
-      <div class="card">
-        <img src="img/revenue_chart.png" alt="収益モデル">
-        <h3>収益モデル</h3>
-        <p>投資・売上・利益の仕組みや利益分配の考え方を分かりやすい図で紹介します。</p>
-        <a href="model.html" class="cta-button secondary">見る</a>
-      </div>
-    </section>
+      <h2>1. 参加費：8万円／人</h2>
+      <ul>
+        <li><strong>内容：</strong> 宿泊、光熱費、車両レンタル、ワークショップなどの実費</li>
+        <li><strong>目的：</strong> プロジェクトを「体験」し、地域や仲間とつながるための参加費</li>
+        <li><strong>注意：</strong> この費用はリノベーション資金や利益分配には使用されません。返金や配当の対象にもなりません。</li>
+      </ul>
+      <p class="note">💬 MakeCampの参加費は“体験のための費用”です。投資や出資とは異なり、現地での活動・生活・交流のために充てられます。</p>
+    </div>
 
-    <section class="cards reveal">
-      <div class="card">
-        <img src="img/distribution_chart.png" alt="申し込み">
-        <h3>申し込み</h3>
-        <p>応募フォームの設問やLINE連携の手順を掲載しています。</p>
-        <a href="apply.html" class="cta-button secondary">応募する</a>
+    <div class="card tint-cream">
+      <h2>特典①　宿泊権</h2>
+      <ul>
+        <li>拠出額に応じて、拠点の年間宿泊権を付与します。</li>
+        <li>自分で利用するだけでなく、友人や家族へ譲渡することも可能です。</li>
+      </ul>
+      <p><strong>例：</strong> 拠出額：45万円 ／ 総改修費：1,500万円 → 出資比率：3％ → 年間3泊分の宿泊権</p>
+
+      <h3>⚠️ 利用に関するご案内</h3>
+      <ul>
+        <li>固定資産税や管理運営費などの維持費が発生するため、民泊利用者（一般宿泊客）を優先とさせていただきます。</li>
+        <li>宿泊を希望する場合は、事前に諏訪までご連絡ください。</li>
+        <li>繁忙期や清掃・予約状況により、希望日に利用できない場合があります。</li>
+      </ul>
+    </div>
+
+    <div class="card tint-blue">
+      <h2>特典②　利益分配（イメージ）</h2>
+      <p>MakeCampは投資目的のイベントではありません。経済的リターンよりも、拠点づくり・地域との関わり・仲間との体験を重視しています。そのうえで、拠点運営から生まれた利益を、宿泊権または分配という形で参加者に感謝の還元としてお返しします。</p>
+
+      <h3>🧱 前提条件（試算）</h3>
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>リノベ費用</td><td>1,500万円</td></tr>
+          <tr><td>最低拠出額</td><td>45万円（3％）〜</td></tr>
+          <tr><td>宿泊料金</td><td>4万円／泊</td></tr>
+          <tr><td>稼働率</td><td>25％（年間 約91泊）</td></tr>
+          <tr><td>年間売上</td><td>約364万円</td></tr>
+          <tr><td>経費・運営手数料・積立（運営維持）</td><td>約218万円（約60％）</td></tr>
+          <tr><td>年間純利益（還元原資）</td><td>約146万円（約40％）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>💰 出資額と年間還元目安（45万円＝3％を基準）</h3>
+      <table>
+        <thead>
+          <tr><th>出資率</th><th>出資額</th><th>年間還元目安</th><th>想定利回り</th><th>回収目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3％</td><td>45万円</td><td>約4.4万円相当</td><td>約9.8％</td><td>約10.2年</td></tr>
+          <tr><td>5％</td><td>75万円</td><td>約7.3万円相当</td><td>約9.8％</td><td>約10.2年</td></tr>
+          <tr><td>10％</td><td>150万円</td><td>約14.6万円相当</td><td>約9.8％</td><td>約10.2年</td></tr>
+          <tr><td>20％</td><td>300万円</td><td>約29.2万円相当</td><td>約9.8％</td><td>約10.2年</td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">※上記はあくまで「目安」であり、保証や確定配当ではありません。MakeCampは、拠点を維持し、体験を共有するコミュニティ型プロジェクトです。</p>
+    </div>
+
+    <div class="card tint-green">
+      <h2>⚙️ 経費・運営手数料・積立（運営維持）の内訳</h2>
+      <div class="chart-wrap">
+        <div class="chart-card">
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="legend">
+          <p>🟩 <b>経費（40%）</b>：光熱費・清掃・保険・固定資産税など</p>
+          <p>🟧 <b>運営手数料（10%）</b>：予約・決済・管理に関わる運営費用</p>
+          <p>🟦 <b>積立（10%）</b>：修繕・家具交換・災害備えなど</p>
+          <p>❤️ <b>還元（40%）</b>：宿泊権・分配金として参加者に還元</p>
+        </div>
       </div>
-      <div class="card">
-        <img src="img/tools.jpg" alt="ギャラリー">
-        <h3>ギャラリー</h3>
-        <p>DIYや祭りの様子を写真でチェック。プロジェクトの雰囲気を感じてください。</p>
-        <a href="gallery.html" class="cta-button secondary">見る</a>
-      </div>
-    </section>
+
+      <script>
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const labels = ['経費（40%）', '運営手数料（10%）', '積立（10%）', '還元（40%）'];
+        const dataValues = [40,10,10,40];
+        const descriptions = [
+          '光熱費・清掃・保険・固定資産税など、拠点維持のための費用です。',
+          '予約対応・決済・運営サポートなど、管理にかかるコストです。',
+          '修繕・家具交換・災害への備えなど、長期運営のための積立です。',
+          '宿泊権や分配金として、参加者に感謝の形で還元されます。'
+        ];
+
+        new Chart(ctx, {
+          type:'doughnut',
+          data:{
+            labels:labels,
+            datasets:[{
+              data:dataValues,
+              backgroundColor:['#66bb6a','#ffa726','#42a5f5','#ef5350'],
+              borderColor:'#fff',
+              borderWidth:2,
+              hoverOffset:12
+            }]
+          },
+          options:{
+            responsive:true,
+            cutout:'65%',
+            plugins:{
+              legend:{display:false},
+              title:{
+                display:true,
+                text:'運営維持 60%　／　還元 40%',
+                font:{size:16,weight:'bold'},
+                color:'#2e5d3d'
+              },
+              tooltip:{
+                backgroundColor:'#2e5d3d',
+                titleColor:'#fff',
+                bodyColor:'#fff',
+                borderColor:'#c8e6c9',
+                borderWidth:1,
+                padding:12,
+                displayColors:false,
+                callbacks:{
+                  label:function(context){
+                    const i=context.dataIndex;
+                    return [`${labels[i]}：${dataValues[i]}%`,descriptions[i]];
+                  }
+                }
+              }
+            },
+            animation:{
+              duration:2300,
+              easing:'easeOutElastic',
+              animateScale:true,
+              animateRotate:true
+            }
+          }
+        });
+      </script>
+    </div>
+
+    <div class="card tint-cream">
+      <h2>📅 還元の考え方とタイミング</h2>
+      <p>MakeCampでは、初年度から運営状況に応じて還元を行います。運営維持を最優先としつつ、余剰利益が発生した場合は出資比率に応じて、宿泊権または分配金の形でお返しします。</p>
+      <ul>
+        <li>還元タイミング： 年度決算後（3〜4月頃）</li>
+        <li>還元方法： 宿泊権または分配金として通知・実施</li>
+      </ul>
+    </div>
+
+    <div class="card tint-blue">
+      <h2>⚠️ 注意事項</h2>
+      <ul>
+        <li>勤務先や契約上の理由で分配金を受け取れない場合は、宿泊権による還元に切り替えることが可能です。</li>
+        <li>本プロジェクトは金融的な投資ではなく、地域と仲間をつなぐ体験型イベントです。</li>
+        <li>年次報告にて、収支・積立・還元内容を公開し、透明性を確保します。</li>
+      </ul>
+    </div>
+
+    <div class="card tint-green">
+      <h2>🌱 一言でまとめると</h2>
+      <blockquote>
+        「まず家を守り、次にみんなで分ける。」<br/>
+        MakeCampは、収益の約6割を拠点の維持に、残りの4割を宿泊権や体験として仲間に還元します。<br/>
+        これは「利益を得るための仕組み」ではなく、“この場所で共に過ごし、育てていく”ための仕組みです。
+      </blockquote>
+    </div>
 
   </main>
 
   <footer>
-    <p>© 2026 MakeCamp. All rights reserved.</p>
+    <p>© 2025 MakeCamp. All rights reserved.</p>
   </footer>
-
-  <!-- Reveal animation script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-      });
-    });
-  </script>
 </body>
 </html>
