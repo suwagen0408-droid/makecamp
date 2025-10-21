@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja">
-<header>
-  <div class="nav-container">
-    <h1 class="logo">MakeCamp</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html#about">概要</a></li>
-        <li><a href="index.html#background">背景</a></li>
-        <li><a href="index.html#features">特徴</a></li>
-        <li><a href="model.html">収益モデル</a></li>
-        <li><a href="index.html#impact">社会的インパクト</a></li>
-        <li><a href="index.html#future">将来展望</a></li>
-        <li><a href="index.html#join">参加方法</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MakeCamp | 収益モデル</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ページ全体中央寄せ */
+    .page-wrap{
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* カード構造（各項目） */
+    .card{
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      padding:24px;
+      margin:24px auto;
+      width:100%;
+      max-width: 960px;
+    }
+
+    /* 背景色で項目を軽くグループ化 */
+    .tint-green{ background:linear-gradient(0deg,#f4fbf6,#fff 120px); }
+    .tint-cream{ background:linear-gradient(0deg,#fbfaf4,#fff 120px); }
+    .tint-blue{ background:linear-gradient(0deg,#f4f8fb,#fff 120px); }
+
+    /* 見出しスタイル */
+    h1, h2, h3 { color:#2e5d3d; }
+    h2{ border-left:6px solid #8cc79a; padding-left:10px; margin-top:1.2em; }
+
+    /* 表デザイン */
+    table{ width:100%; border-collapse:collapse; margin-top:12px; }
+    th,td{ border:1px solid #e9e9e9; padding:10px; text-align:center; }
+    thead th{ background:#f7faf8; }
+
+    /* グラフ中央寄せ */
+    .chart-wrap{ display:grid; place-items:center; }
+    .chart-card{ width:100%; max-width:560px; margin:0 auto; }
+    .legend{ width:100%; max-width:560px; margin:16px auto 0; line-height:1.6; }
+
+    ul{ margin-left:1.2em; }
+    .note{ color:#666; font-size:0.92rem; }
+  </style>
+</head>
 
 <body>
   <!-- 共通ナビ -->
